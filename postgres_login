@@ -1,0 +1,2 @@
+#!/bin/bash
+psql -U srecord_user -d srecord_db
