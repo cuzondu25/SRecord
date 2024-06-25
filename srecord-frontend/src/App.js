@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import SalesEntryForm from './components/SalesEntryForm';
 import WeeklyReport from './components/WeeklyReport';
 import './App.css';
@@ -19,10 +19,10 @@ function App() {
           </ul>
         </nav>
 
-        <Switch>
+        <Routes>
           <Route path="/" exact component={SalesEntryForm} />
           <Route path="/weekly-report" component={WeeklyReport} />
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
