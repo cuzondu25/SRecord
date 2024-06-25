@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """setup Flask App"""
 from flask import Flask
-from app.routes import *
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
 
@@ -29,3 +28,8 @@ def create_app():
     app.register_blueprint(app_bp)
 
     return app
+
+
+
+from app.routes import *
+
