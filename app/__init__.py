@@ -31,6 +31,5 @@ def create_app():
 
 
 
-
-
 from app.routes import *
+

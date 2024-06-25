@@ -10,7 +10,7 @@ app_bp = Blueprint("app_bp", __name__)
 
 @app_bp.route('/')
 def index():
-    return "SRecord Api"
+    return "SRecord Api
 
 @app_bp.route('/api/items', methods=['GET'])
 def get_items():

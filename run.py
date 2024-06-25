@@ -7,6 +7,7 @@ from flask_cors import CORS
 
 app = create_app()
 CORS(app)
+
 print(app.url_map)
 
 # Creating an application context to work with the app
