@@ -1,3 +1,5 @@
 __pycache__/
 app/__pycache/
 *.pyc
+node_modules
+srecord_frontend/node_modules/
