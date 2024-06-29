@@ -1,31 +1,53 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 
+// WeeklyReport Component: Fetches and displays weekly sales records.
 const WeeklyReport = () => {
+  // State variables for storing weekly sales data, loading status, and error message.
   const [weeklyRecord, setWeeklyRecord] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  // useEffect hook to fetch weekly sales data when the component mounts.
   useEffect(() => {
-    axios.get('/api/weekly-records')
+    // Sending a GET request to the /api/weekly-records endpoint.
+    Axios.get('http://localhost:5000/api/weekly-records')
       .then(response => {
+        // Setting the weekly sales data in the state.
         setWeeklyRecord(response.data);
+        // Setting the loading status to false.
+        setLoading(false);
       })
       .catch(error => {
+        // Logging the error to the console.
         console.error('There was an error fetching the weekly records!', error);
+        // Setting the error message in the state.
+        setError('Error fetching weekly records');
+        // Setting the loading status to false.
+        setLoading(false);
       });
   }, []);
 
-  if (!weeklyRecord) {
+  // If data is still loading, show a loading message.
+  if (loading) {
     return <div>Loading...</div>;
   }
 
+  // If there was an error fetching data, show the error message.
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  // Render the weekly sales report.
   return (
     <div>
       <h2>Weekly Sales Report</h2>
-      <p>Week Start: {weeklyRecord.week_start}</p>
-      <p>Week End: {weeklyRecord.week_end}</p>
-      <p>Total Sales: ${weeklyRecord.total_sales.toFixed(2)}</p>
+      <p><strong>Week Start:</strong> {weeklyRecord.week_start}</p>
+      <p><strong>Week End:</strong> {weeklyRecord.week_end}</p>
+      <p><strong>Total Sales:</strong> ${weeklyRecord.total_sales.toFixed(2)}</p>
     </div>
   );
 };
 
 export default WeeklyReport;
+

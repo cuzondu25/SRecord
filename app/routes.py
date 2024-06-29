@@ -58,8 +58,8 @@ def get_weekly_records(user_id):
 
 # Add the new API endpoint to retreive weekly record
 @app_bp.route('/api/weekly-records', methods=['GET'])
-@jwt_required()
+#@jwt_required()
 def weekly_records():
-    user_id = #get_jwt_identity()
+    user_id = 1 #get_jwt_identity()
     records = get_weekly_records(user_id)
     return jsonify(records), 200

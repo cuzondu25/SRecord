@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import Axios from 'axios';
 
 /**
  * SalesEntryForm Component
@@ -29,7 +29,7 @@ const SalesEntryForm = () => {
      * useEffect hook to fetch items from the backend when the component mounts
      */
     useEffect(() => {
-        axios.get('/api/items')
+        Axios.get('http://localhost:5000/api/items')
             .then(response => {
                 setItems(response.data);
             })
@@ -85,7 +85,7 @@ const SalesEntryForm = () => {
         setErrors(validationErrors);
 
         if (Object.keys(validationErrors).length === 0) {
-            axios.post('/api/sales', formData)
+            Axios.post('http://localhost:5000/api/sales', formData)
                 .then(response => {
                     setSuccessMessage('Sales data submitted successfully');
                     setFormData({
