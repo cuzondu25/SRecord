@@ -11,7 +11,10 @@ const WeeklyReport = () => {
   // useEffect hook to fetch weekly sales data when the component mounts.
   useEffect(() => {
     // Sending a GET request to the /api/weekly-records endpoint.
-    Axios.get('http://localhost:5000/api/weekly-records')
+    const token = localStorage.getItem('token');
+    Axios.get('http://localhost:5000/api/weekly-records', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(response => {
         // Setting the weekly sales data in the state.
         setWeeklyRecord(response.data);

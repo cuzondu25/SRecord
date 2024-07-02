@@ -79,13 +79,15 @@ const SalesEntryForm = () => {
      * 
      * @param {Object} e - The event object
      */
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+	const token = localStorage.getItem('token');
         const validationErrors = validateForm();
         setErrors(validationErrors);
 
         if (Object.keys(validationErrors).length === 0) {
-            Axios.post('http://localhost:5000/api/sales', formData)
+            await Axios.post('http://localhost:5000/api/sales', formData,
+		{ headers: { Authorization: `Bearer ${token}` } })
                 .then(response => {
                     setSuccessMessage('Sales data submitted successfully');
                     setFormData({
