@@ -1,4 +1,6 @@
 .App {
+  background: url('background.jpg') no-repeat top fixed;
+  background-size: 100vw 100vh;
   text-align: center;
   background-color: #d16b6b;
   min-height: 100vh;
