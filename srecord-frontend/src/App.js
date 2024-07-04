@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SalesEntryForm from './components/SalesEntryForm';
 import WeeklyReport from './components/WeeklyReport';
+import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
@@ -51,6 +52,7 @@ function App() {
                             </nav>
 
                             <Routes>
+                                <Route path="/" element={<Home />} />
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/register" element={<Register />} />
                                 <Route path="/sales-entry" element={isAuthenticated ? <SalesEntryForm /> : <Navigate to="/login" />} />
