@@ -10,7 +10,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await Axios.post('http://localhost:5000/register', { username, password });
+      await Axios.post('https://cuzondu25.pythonanywhere.com/register', { username, password });
       navigate('/login');
     } catch (error) {
       alert('Registration failed');

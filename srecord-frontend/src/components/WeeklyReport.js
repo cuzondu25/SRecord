@@ -12,7 +12,7 @@ const WeeklyReport = () => {
   useEffect(() => {
     // Sending a GET request to the /api/weekly-records endpoint.
     const token = localStorage.getItem('token');
-    Axios.get('http://localhost:5000/api/weekly-records', {
+    Axios.get('https://cuzondu25.pythonanywhere.com/api/weekly-records', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {

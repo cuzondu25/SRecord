@@ -29,7 +29,7 @@ const SalesEntryForm = () => {
      * useEffect hook to fetch items from the backend when the component mounts
      */
     useEffect(() => {
-        Axios.get('http://localhost:5000/api/items')
+        Axios.get('https://cuzondu25.pythonanywhere.com/api/items')
             .then(response => {
                 setItems(response.data);
             })
@@ -86,7 +86,7 @@ const SalesEntryForm = () => {
         setErrors(validationErrors);
 
         if (Object.keys(validationErrors).length === 0) {
-            await Axios.post('http://localhost:5000/api/sales', formData,
+            await Axios.post('https://cuzondu25.pythonanywhere.com/api/sales', formData,
 		{ headers: { Authorization: `Bearer ${token}` } })
                 .then(response => {
                     setSuccessMessage('Sales data submitted successfully');
