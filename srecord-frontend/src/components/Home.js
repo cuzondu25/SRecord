@@ -6,7 +6,7 @@ const Home = () => {
       <div class="hero-content">
         <h1>Welcome to SRecord</h1>
         <p>Your ultimate sales record management solution.</p>
-        <a href="#features" class="btn">Explore Features</a>
+        <a href="https://s-record-landingpg.vercel.app/srecord_html.html" class="btn">Explore Features</a>
       </div>
     </section>
   )

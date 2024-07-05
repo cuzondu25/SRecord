@@ -1,2 +1,0 @@
-#!/bin/bash
-sudo -i -u postgres psql -U postgres -f /root/SRecord/postgresql_dev.sql
