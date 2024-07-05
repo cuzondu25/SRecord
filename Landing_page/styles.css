@@ -1,0 +1,113 @@
+body {
+    background: url('srecord background.jpg') no-repeat top fixed;
+    background-size: 100vw 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    padding-top: 0px; /* Offset for the fixed header */
+    margin-top: -30px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#features ul {
+    padding-left: 20%;
+}
+
+#features ul li {
+    max-width: 85%;
+    text-align: left;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    margin-left: 0;
+}
+
+img {
+    width: 40%;
+    margin-left: -25%;
+    padding-bottom: 10px;
+}
+
+.btn {
+    background: #007BFF;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+a[href="http://localhost:3000/home"] {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+#contact {
+    margin-bottom: 3rem;
+}
+
+section {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
