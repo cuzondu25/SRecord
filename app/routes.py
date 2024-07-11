@@ -20,6 +20,19 @@ def get_items():
 @app_bp.route('/api/sales', methods=['POST'])
 @jwt_required()
 def submit_sales():
+    """ function to submit sales data to database
+    params:
+        data(dict): url data of sales item
+        user_id(int): user id of user
+        item_id(int): item id os item
+        quantity(int):quantity of item sold
+        date(date):   date item was sold
+        new_sale(obj): sales row instance for adding sales data to database
+    
+    return:
+        success
+    """
+
     data = request.get_json()
     user_id = get_jwt_identity()
     item_id = data.get('item_id')
@@ -56,7 +69,7 @@ def get_weekly_records(user_id):
     }
 
 
-# Add the new API endpoint to retreive weekly record
+# API endpoint to retreive weekly record
 @app_bp.route('/api/weekly-records', methods=['GET'])
 @jwt_required()
 def weekly_records():

@@ -19,12 +19,14 @@ def create_app():
     # Disabling modification tracking to save resources
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
+    
     # initialization and configuration of flask JWT EXTENDED
     from datetime import timedelta
     app.config['JWT_SECRET_KEY'] = 'c29181e181b7414a9c3c2571be1377ab'
     app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=1)
     jwt = JWTManager(app)
 
+    # Initializing cross-origin resource sharing
     CORS(app)
 
     # Initializing the db object with the Flask app

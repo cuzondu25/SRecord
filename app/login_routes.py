@@ -8,10 +8,21 @@ from . import db
 
 @app_bp.route('/register', methods=['POST'])
 def register():
+    """ A function to register a new user
+    params:
+        data(dict): collect url request data
+        username(str): user's username
+        password(str): user's password
+        new_user(obj): User instance for adding using info to the database
+    return:
+        success msg
+    """
+
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
 
+    # tests if user already exist
     if User.query.filter_by(username=username).first():
         return jsonify({"msg": "Username already exists"}), 400
 
@@ -23,12 +34,18 @@ def register():
 
 @app_bp.route('/login', methods=['POST'])
 def login():
+    """ A function to grant user access to protected routes
+    return:
+        access token
+    """
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
 
+    # fetches user data from the database
     user = User.query.filter_by(username=username).first()
 
+    # checks for password match
     if not user or not check_password_hash(user.password_hash, password):
         return jsonify({"msg": "Invalid username or password"}), 401
 
