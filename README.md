@@ -9,7 +9,7 @@ SRecord is a full-stack web application designed to help small businesses track 
 ### Final Project Blog Article: [SRecord Project Blog](https://www.linkedin.com/pulse/automating-small-business-sales-tracking-srecord-project-uzondu-ebube-avtcf)
 
 ### Authors LinkedIn:
-* [Uzondu Chidiebube](https://www.linkedin.com/in/uzondu-ebube-739472108)
+* [Uzondu Chidiebube](https://www.linkedin.com/in/chidiebube-uzondu-739472108/)
 
 ## Installation 
 ### Prerequisites
